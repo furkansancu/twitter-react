@@ -1,0 +1,23 @@
+.NotFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &_Center {
+        display: inline-block;
+
+        &__Text {
+            color: #71767b;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 20px;
+        }
+
+        &__Button {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
