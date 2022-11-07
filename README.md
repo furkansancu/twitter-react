@@ -1,6 +1,6 @@
 # Twitter React
 
-[Twitter.com](https://github.com/facebook/create-react-app) front page created using React.
+[twitter.com](https://twitter.com/) front page created using React.
 
 ## Commands
 
