@@ -1,7 +1,9 @@
+@import '../../../globals';
+
 .BubbleButton {
     display: inline-block;
     outline: none;
-    background-color: #1da1f2;
+    background-color: $bird-blue;
     color: #fff;
     height: 40px;
     padding: 0 16px;
