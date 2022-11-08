@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 import styles from './BubbleButton.module.scss';
 
-export default function BubbleButton(props) {
+function BubbleButton(props) {
   return (
     <button
       className={styles.BubbleButton}
@@ -11,3 +12,15 @@ export default function BubbleButton(props) {
     </button>
   )
 }
+
+BubbleButton.propTypes = {
+  text: PropTypes.string,
+  onClick: PropTypes.func
+}
+
+BubbleButton.defaultProps = {
+  text: "Button",
+  onClick: ()=>{}
+}
+
+export default BubbleButton;

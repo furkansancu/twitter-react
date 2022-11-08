@@ -1,0 +1,44 @@
+@import '../../../globals';
+
+.IconButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+    padding: 12px;
+    margin: 0;
+
+    &_Text {
+        display: flex;
+        align-items: center;
+        color: $whiteish-gray;
+        font-size: 20px;
+        font-weight: 400;
+        margin-left: 20px;
+        margin-right: 16px;
+
+        &__Bold {
+            font-weight: 700;
+        }
+    }
+
+    &_Dot {
+        display: block;
+        width: 7px;
+        height: 7px;
+        background-color: $bird-blue;
+        border-radius: 9999px;
+
+        position: absolute;
+        top: 7px;
+        left: 31px;
+    }
+}
+
+.IconButton_Blue:hover { background-color: rgba($color: $bird-blue, $alpha: 0.1); }
+.IconButton_Gray:hover { background-color: rgba($color: $whiteish-gray, $alpha: 0.1); }

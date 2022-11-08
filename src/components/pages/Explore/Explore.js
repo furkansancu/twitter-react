@@ -1,9 +1,7 @@
 import React from 'react'
 
-import styles from './Explore.module.scss';
+import FeedPage from '../../templates/FeedPage/FeedPage';
 
 export default function Explore() {
-  return (
-    <div className={styles.Explore}>Explore</div>
-  )
+  return (<FeedPage>explore</FeedPage>)
 }
