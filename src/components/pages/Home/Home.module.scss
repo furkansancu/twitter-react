@@ -1,3 +1,5 @@
+@import '../../../globals';
+
 .Home {
     display: flex;
     justify-content: center;
@@ -41,6 +43,12 @@
 
         &__Feed {
             width: 600px;
+            border-color: $border-gray;
+            border-style: solid;
+            border-top: none;
+            border-bottom: none;
+            border-left-width: 1px;
+            border-right-width: 1px;
         }
 
         &__Sidebar {

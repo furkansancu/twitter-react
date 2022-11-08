@@ -1,3 +1,5 @@
+@import '../../../globals';
+
 .NotFound {
     display: flex;
     justify-content: center;
@@ -9,7 +11,7 @@
         display: inline-block;
 
         &__Text {
-            color: #71767b;
+            color: $text-gray;
             margin: 0;
             padding: 0;
             padding-bottom: 20px;
