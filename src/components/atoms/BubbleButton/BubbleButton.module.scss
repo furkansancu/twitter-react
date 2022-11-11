@@ -11,4 +11,13 @@
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
+
+    &XL {
+        display: block;
+        padding: 0 32px;
+        font-size: 18px;
+        font-weight: 700;
+        width: 100%;
+        min-height: 52px;
+    }
 }

@@ -1,4 +1,9 @@
 .Header {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+
     &_Logo {
         margin-top: 5px;
         display: block;
@@ -6,9 +11,17 @@
 
     &_Button {
         margin-top: 8px;
+        font-weight: 400;
+        font-size: 14px;
+    }
 
-        &_s {
-            margin-top: 20px;
-        }
+    &_TweetButton {
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    &_Bottom {
+        margin-bottom: 10px;
+        width: 90%;
     }
 }

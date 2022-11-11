@@ -1,0 +1,67 @@
+@import '../../../globals';
+
+.ProfileButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 64px;
+    padding: 12px;
+    margin: 0;
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba($color: $whiteish-gray, $alpha: 0.1);
+    }
+
+    &:active {
+        background-color: rgba($color: $whiteish-gray, $alpha: 0.2);
+    }
+
+    &_Profile {
+        display: flex;
+        align-items: center;
+        height: 64px;
+
+        &Pic {
+            border-radius: 9999px;
+        }
+
+        &Names {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 36px;
+            margin-left: 10px;
+        }
+
+        &Name {
+            display: block;
+            width: 100%;
+            text-align: left;
+            color: $whiteish-gray;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        &Id {
+            display: block;
+            width: 100%;
+            text-align: left;
+            color: $text-gray;
+            font-weight: 400;
+            font-size: 15px;
+        }
+    }
+
+    &_Dots {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+}
