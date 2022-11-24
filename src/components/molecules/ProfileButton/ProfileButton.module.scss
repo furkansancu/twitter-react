@@ -15,6 +15,10 @@
     transition: background-color 0.2s;
     cursor: pointer;
 
+    @media screen and (max-width: 1299px) {
+        width: 64px;
+    }
+
     &:hover {
         background-color: rgba($color: $whiteish-gray, $alpha: 0.1);
     }
@@ -33,6 +37,10 @@
         }
 
         &Names {
+            @media screen and (max-width: 1299px) {
+                display: none;
+            }
+
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -41,7 +49,7 @@
         }
 
         &Name {
-            display: block;
+            display: flex;
             width: 100%;
             text-align: left;
             color: $whiteish-gray;
@@ -60,6 +68,10 @@
     }
 
     &_Dots {
+        @media screen and (max-width: 1299px) {
+            display: none;
+        }
+
         display: flex;
         height: 100%;
         align-items: center;

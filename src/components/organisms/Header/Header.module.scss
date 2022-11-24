@@ -4,24 +4,27 @@
     flex-direction: column;
     justify-content: space-between;
 
-    &_Logo {
-        margin-top: 5px;
-        display: block;
-    }
-
-    &_Button {
-        margin-top: 8px;
-        font-weight: 400;
-        font-size: 14px;
-    }
-
-    &_TweetButton {
+    &_Tweet {
+        @media screen and (max-width: 1299px) {
+            width: 100%;
+            margin-right: 0 !important;
+            display: flex;
+            justify-content: center;
+        }
+        
         margin-top: 20px;
-        width: 90%;
+        margin-right: 40px;
     }
 
     &_Bottom {
+        @media screen and (max-width: 1299px) {
+            width: 100%;
+            margin-right: 0 !important;
+            display: flex;
+            justify-content: center;
+        }
+
         margin-bottom: 10px;
-        width: 90%;
+        margin-right: 20px;
     }
 }

@@ -1,0 +1,74 @@
+@import '../../../globals';
+
+.NavLink {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @media screen and (max-width: 1299px) {
+        justify-content: center;
+    }
+
+    &_Button {
+        display: flex;
+        align-items: center;
+        border-radius: 9999px;
+
+        padding: 12.5px;
+        margin: 0;
+        background: none;
+        cursor: pointer;
+        outline: none;
+        
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: rgba($color: $text-gray, $alpha: 0.2);
+        }
+
+        &_Text {
+            @media screen and (max-width: 1299px) {
+                display: none;
+            }
+
+            display: flex;
+            color: $whiteish-gray;
+            font-size: 20px;
+            margin-left: 20px;
+            margin-right: 16px;
+        }
+
+        &_Icon {
+            position: relative;
+        }
+
+        &_Dot, &_Notification {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            background-color: $bird-blue;
+            border: 1px solid #000;
+            border-radius: 9999px;
+        }
+
+        &_Dot {
+            width: 7px;
+            height: 7px;
+            top: -4px;
+            right: 1px;
+        }
+
+        &_Notification {
+            color: #fff;
+            font-size: 11px;
+            font-weight: 400;
+            width: 16px;
+            height: 16px;
+            top: -5px;
+            right: -5px;
+        }
+    }
+}
+
+.HoverBlueBG:hover { background-color: rgba($color: $bird-blue, $alpha: 0.1); }

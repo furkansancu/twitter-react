@@ -1,133 +1,36 @@
 import React from 'react'
 
-import { useNavigate, useLocation } from 'react-router-dom';
-
 import styles from './Header.module.scss';
 
-import IconButton from '../../atoms/IconButton/IconButton';
-import BubbleButton from '../../atoms/BubbleButton/BubbleButton';
 import ProfileButton from '../../molecules/ProfileButton/ProfileButton';
+import NavLink from '../../molecules/NavLink/NavLink';
+import BubbleButton from '../../atoms/BubbleButton/BubbleButton';
 
-import Logo from '../../../images/logo.svg';
-
-import HomeIcon from '../../../icons/home.svg';
-import ExploreIcon from '../../../icons/explore.svg';
-import NotificationIcon from '../../../icons/notification.svg';
-import MessageIcon from '../../../icons/message.svg';
-import BookmarkIcon from '../../../icons/bookmark.svg';
-import ListIcon from '../../../icons/list.svg';
-import ProfileIcon from '../../../icons/profile.svg';
-
-import HomeOutlineIcon from '../../../icons/home-outline.svg';
-import ExploreOutlineIcon from '../../../icons/explore-outline.svg';
-import NotificationOutlineIcon from '../../../icons/notification-outline.svg';
-import MessageOutlineIcon from '../../../icons/message-outline.svg';
-import BookmarkOutlineIcon from '../../../icons/bookmark-outline.svg';
-import ListOutlineIcon from '../../../icons/list-outline.svg';
-import ProfileOutlineIcon from '../../../icons/profile-outline.svg';
-import MoreOutlineIcon from '../../../icons/more-outline.svg';
-
-export default function Header() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
+export default function Header(props) {
   return (
     <div className={styles.Header}>
-        <div>
-          <div className={styles.Header_Logo}>
-            <IconButton
-                icon={<img src={Logo} width={30} height={50} alt="Twitter logo" />}
-                size={50}
-                onClick={() => navigate('/home')}
-                blue={true}
-                />
-          </div>
-          <div className={styles.Header_Buttons}>
-            <div className={styles.Header_Button}>
-              <IconButton
-                active={location.pathname === "/home"}
-                active_icon={<img src={HomeIcon} width={26.25} height={50} alt="Explore icon" />}
-                icon={<img src={HomeOutlineIcon} width={26.25} height={50} alt="Home icon" />}
-                notification={true}
-                text="Home"
-                size={50}
-                onClick={() => navigate('/home')}
-                />
-            </div>
-            <div className={styles.Header_Button}>
-              <IconButton
-                active={location.pathname === "/explore"}
-                active_icon={<img src={ExploreIcon} width={26.25} height={50} alt="Explore icon" />}
-                icon={<img src={ExploreOutlineIcon} width={26.25} height={50} alt="Explore icon" />}
-                text="Explore"
-                size={50}
-                onClick={() => navigate('/explore')}
-                />
-            </div>
-            <div className={styles.Header_Button}>
-              <IconButton
-                active={location.pathname === "/notifications"}
-                active_icon={<img src={NotificationIcon} width={26.25} height={50} alt="Explore icon" />}
-                icon={<img src={NotificationOutlineIcon} width={26.25} height={50} alt="Explore icon" />}
-                text="Notifications"
-                size={50}
-                onClick={() => navigate('/notifications')}
-                />
-            </div>
-            <div className={styles.Header_Button}>
-              <IconButton
-                active={location.pathname === "/messages"}
-                active_icon={<img src={MessageIcon} width={26.25} height={50} alt="Explore icon" />}
-                icon={<img src={MessageOutlineIcon} width={26.25} height={50} alt="Explore icon" />}
-                text="Messages"
-                size={50}
-                onClick={() => navigate('/messages')}
-                />
-            </div>
-            <div className={styles.Header_Button}>
-              <IconButton
-                active={location.pathname === "/bookmarks"}
-                active_icon={<img src={BookmarkIcon} width={26.25} height={50} alt="Explore icon" />}
-                icon={<img src={BookmarkOutlineIcon} width={26.25} height={50} alt="Explore icon" />}
-                text="Bookmarks"
-                size={50}
-                onClick={() => navigate('/bookmarks')}
-                />
-            </div>
-            <div className={styles.Header_Button}>
-              <IconButton
-                active={location.pathname === "/lists"}
-                active_icon={<img src={ListIcon} width={26.25} height={50} alt="Explore icon" />}
-                icon={<img src={ListOutlineIcon} width={26.25} height={50} alt="Explore icon" />}
-                text="Lists"
-                size={50}
-                onClick={() => navigate('/lists')}
-                />
-            </div>
-            <div className={styles.Header_Button}>
-              <IconButton
-                active={location.pathname === "/profile"}
-                active_icon={<img src={ProfileIcon} width={26.25} height={50} alt="Explore icon" />}
-                icon={<img src={ProfileOutlineIcon} width={26.25} height={50} alt="Explore icon" />}
-                text="Profile"
-                size={50}
-                onClick={() => navigate('/profile')}
-                />
-            </div>
-            <div className={styles.Header_Button}>
-              <IconButton
-                icon={<img src={MoreOutlineIcon} width={26.25} height={50} alt="Explore icon" />}
-                text="More"
-                size={50}
-                />
-            </div>
-          </div>
-          <div className={styles.Header_TweetButton}>
-            <BubbleButton text="Tweet" align="center" size="xl" />
+        <div className={styles.Header_Upper}>
+          <NavLink to="/home" icon="Logo" mt={2} size={30} blue_background={true} />
+          <nav role="navigation">
+            <NavLink to="/home" icon="Home" text="Home" notification={true} mt={5} />
+            <NavLink to="/explore" icon="Explore" text="Explore" notification={0}/>
+            <NavLink to="/notification" icon="Notification" text="Notifications" notification={1}/>
+            <NavLink to="/messages" icon="Message" text="Messages" notification={0}/>
+            <NavLink to="/bookmarks" icon="Bookmark" text="Bookmarks" notification={0}/>
+            <NavLink to="/lists" icon="List" text="Lists" notification={0}/>
+            <NavLink to="/profile" icon="Profile" text="Profile" notification={0}/>
+            <NavLink to="/more" icon="More" text="More" notification={0}/>
+          </nav>
+          <div className={styles.Header_Tweet}>
+            <BubbleButton text="Tweet" size="XL" align="center" responsive_icon="post-tweet" />
           </div>
         </div>
         <div className={styles.Header_Bottom}>
-          <ProfileButton name="twitter user" id="@user123" />
+          <ProfileButton
+            pic={props.user.pic}
+            name={props.user.name}
+            username={props.user.username}
+            verified={props.user.verified} />
         </div>
     </div>
   )

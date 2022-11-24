@@ -20,4 +20,33 @@
         width: 100%;
         min-height: 52px;
     }
+
+    &_Text {
+        display: block;
+    }
+    
+    &_Icon {
+        display: flex;
+    }
+
+    &__Responsive {
+        @media screen and (max-width: 1299px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            padding: 0;
+
+            .BubbleButton_Text {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 1300px) {
+            .BubbleButton_Icon {
+                display: none;
+            }
+        }
+    }
 }
