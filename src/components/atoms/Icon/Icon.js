@@ -1,65 +1,92 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
+import styles from './Icon.module.scss';
+
 // DEFAULT
-import Logo from '../../../images/logo.svg';
-import Home from '../../../icons/home.svg';
-import Explore from '../../../icons/explore.svg';
-import Notification from '../../../icons/notification.svg';
-import Message from '../../../icons/message.svg';
-import Bookmark from '../../../icons/bookmark.svg';
-import List from '../../../icons/list.svg';
-import Profile from '../../../icons/profile.svg';
-import Verified from '../../../icons/verified.svg';
-import PostTweet from '../../../icons/post-tweet.svg';
+import { ReactComponent as Logo } from '../../../images/logo.svg';
+import { ReactComponent as Home } from '../../../icons/home.svg';
+import { ReactComponent as Hashtag } from '../../../icons/hashtag.svg';
+import { ReactComponent as Notification } from '../../../icons/notification.svg';
+import { ReactComponent as Message } from '../../../icons/message.svg';
+import { ReactComponent as Bookmark } from '../../../icons/bookmark.svg';
+import { ReactComponent as List } from '../../../icons/list.svg';
+import { ReactComponent as Profile } from '../../../icons/profile.svg';
+import { ReactComponent as Verified } from '../../../icons/verified.svg';
+import { ReactComponent as PostTweet } from '../../../icons/post-tweet.svg';
 
 // OUTLINE
-import HomeOutline from '../../../icons/home-outline.svg';
-import ExploreOutline from '../../../icons/explore-outline.svg';
-import NotificationOutline from '../../../icons/notification-outline.svg';
-import MessageOutline from '../../../icons/message-outline.svg';
-import BookmarkOutline from '../../../icons/bookmark-outline.svg';
-import ListOutline from '../../../icons/list-outline.svg';
-import ProfileOutline from '../../../icons/profile-outline.svg';
-import MoreOutline from '../../../icons/more-outline.svg';
+import { ReactComponent as HomeOutline } from '../../../icons/home-outline.svg';
+import { ReactComponent as HashtagOutline } from '../../../icons/hashtag-outline.svg';
+import { ReactComponent as NotificationOutline } from '../../../icons/notification-outline.svg';
+import { ReactComponent as MessageOutline } from '../../../icons/message-outline.svg';
+import { ReactComponent as BookmarkOutline } from '../../../icons/bookmark-outline.svg';
+import { ReactComponent as ListOutline } from '../../../icons/list-outline.svg';
+import { ReactComponent as ProfileOutline } from '../../../icons/profile-outline.svg';
+import { ReactComponent as MoreOutline } from '../../../icons/more-outline.svg';
+import { ReactComponent as ExploreOutline } from '../../../icons/explore-outline.svg';
+import { ReactComponent as DateOutline } from '../../../icons/date-outline.svg';
+import { ReactComponent as EmojiOutline } from '../../../icons/emoji-outline.svg';
+import { ReactComponent as GifOutline } from '../../../icons/gif-outline.svg';
+import { ReactComponent as LocationOutline } from '../../../icons/location-outline.svg';
+import { ReactComponent as MediaOutline } from '../../../icons/media-outline.svg';
+import { ReactComponent as PollOutline } from '../../../icons/poll-outline.svg';
 
 function Icon (props) {
-    let source;
+    let Src, colorClass;
 
     switch (props.name.toLowerCase()) {
-        case "home": source = props.outline === true ? HomeOutline : Home
+        case "home": Src = props.outline === true ? HomeOutline : Home
         break;
-        case "explore": source = props.outline === true ? ExploreOutline : Explore
+        case "hashtag": Src = props.outline === true ? HashtagOutline : Hashtag
         break;
-        case "notification": source = props.outline === true ? NotificationOutline : Notification
+        case "notification": Src = props.outline === true ? NotificationOutline : Notification
         break;
-        case "message": source = props.outline === true ? MessageOutline : Message
+        case "message": Src = props.outline === true ? MessageOutline : Message
         break;
-        case "bookmark": source = props.outline === true ? BookmarkOutline : Bookmark
+        case "bookmark": Src = props.outline === true ? BookmarkOutline : Bookmark
         break;
-        case "list": source = props.outline === true ? ListOutline : List
+        case "list": Src = props.outline === true ? ListOutline : List
         break;
-        case "profile": source = props.outline === true ? ProfileOutline : Profile
+        case "profile": Src = props.outline === true ? ProfileOutline : Profile
         break;
-        case "more": source = MoreOutline
+        case "more": Src = MoreOutline
         break;
-        case "verified": source = Verified
+        case "verified": Src = Verified
         break;
-        default: source = Logo
+        default: Src = Logo
         break;
-        case "post-tweet": source = PostTweet
+        case "post-tweet": Src = PostTweet
+        break;
+        case "explore": Src = ExploreOutline
+        break;
+        case "date": Src = DateOutline
+        break;
+        case "emoji": Src = EmojiOutline
+        break;
+        case "gif": Src = GifOutline
+        break;
+        case "location": Src = LocationOutline
+        break;
+        case "media": Src = MediaOutline
+        break;
+        case "poll": Src = PollOutline
         break;
     }
 
+    switch (props.color.toLowerCase()) {
+        case "blue": colorClass = styles.Icon__Blue
+        break;
+        default: colorClass = styles.Icon__White
+        break;
+    }
+
+
     return ( 
-        <img
-            src={source}
+        <Src
             width={props.size}
             height={props.size}
-            style={{
-                fill: props.color
-            }}
-            alt="Icon"
+            className={colorClass}
             />
     )
 }
@@ -74,7 +101,7 @@ Icon.propTypes = {
 Icon.defaultProps = {
     outline: false,
     size: 18,
-    color: "#e7e9ea"
+    color: "white"
 }
 
 export default Icon;

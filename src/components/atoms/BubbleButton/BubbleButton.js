@@ -27,6 +27,7 @@ function BubbleButton(props) {
     <button
       className={cName}
       onClick={props.onClick}
+      disabled={props.disabled}
       style={{textAlign: props.align}}>
         <span className={styles.BubbleButton_Text}>{props.text}</span>
         {
@@ -45,14 +46,16 @@ BubbleButton.propTypes = {
   onClick: PropTypes.func,
   size: PropTypes.string,
   align: PropTypes.string,
-  responsive_icon: PropTypes.string
+  responsive_icon: PropTypes.string,
+  disabled: PropTypes.bool
 }
 
 BubbleButton.defaultProps = {
   text: "Button",
   onClick: ()=>{},
   size: "m",
-  align: "center"
+  align: "center",
+  disabled: false
 }
 
 export default BubbleButton;

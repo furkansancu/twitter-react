@@ -1,0 +1,71 @@
+@import '../../../globals';
+
+.PostTweet {
+    display: flex;
+    padding: 0 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $border-gray;
+
+    &_Profile {
+        width: 48px;
+        margin-right: 12px;
+        padding-top: 4px;
+
+        &Pic {
+            border-radius: 9999px;
+            transition: opacity ease 0.2s;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+
+    &_Container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &_Tweet {
+        display: block;
+        width: 100%;
+        height: 26px;
+        background: none;
+        border: none;
+        outline: none;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        color: $whiteish-gray;
+        font-size: 1.2em;
+        line-height: 1.2em;
+        padding: 12px 0;
+
+        user-select: text;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        resize: none;
+        overflow: hidden;
+
+
+        &::placeholder {
+            color: rgb(113,118,123);
+        }
+    }
+
+    &_TweetTools {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &__Attachments {
+            display: flex;
+        }
+
+        &__MdHide {
+            @media screen and (max-width: 1299px) {
+                display: none;
+            }
+        }
+    }
+}

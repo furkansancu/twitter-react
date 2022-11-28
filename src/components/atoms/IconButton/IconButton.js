@@ -2,39 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './IconButton.module.scss';
-
-import Logo from '../../../images/logo.svg';
+import Icon from '../Icon/Icon';
 
 function IconButton(props) {
+  let bgClass;
+
+  switch (props.bg.toLowerCase()) {
+    default: bgClass = styles.IconButton__White
+    break;
+    case "blue": bgClass = styles.IconButton__Blue
+    break;
+  }
+
   return (
     <button
-        className={`${styles.IconButton} ${props.blue ? styles.IconButton_Blue : styles.IconButton_Gray}`}
-        onClick={props.onClick}
-        style={{minWidth: props.size + "px", height: props.size + "px"}}
-    >
-      {props.active && props.active_icon !== undefined ? props.active_icon : props.icon}
-      {props.notification ? <div className={styles.IconButton_Dot}></div> : null}
-      {props.text !== undefined ? <span className={`${styles.IconButton_Text} ${props.active ? styles.IconButton_Text__Bold : null}`}>{props.text}</span>: null}
+      disabled={props.disabled}
+      className={`${styles.IconButton} ${bgClass} ${props.className}`}
+      style={{
+        width: props.size,
+        height: props.size,
+        marginRight: props.mr,
+        marginLeft: props.ml
+      }}
+      >
+      <Icon name={props.icon.name} size={props.icon.size} color={props.icon.color} />
     </button>
   )
 }
 
 IconButton.propTypes = {
-  active: PropTypes.bool,
-  onClick: PropTypes.func,
+  icon: PropTypes.object,
   size: PropTypes.number,
-  active_icon: PropTypes.any,
-  notification: PropTypes.bool,
-  icon: PropTypes.any,
-  text: PropTypes.string
+  mr: PropTypes.number,
+  ml: PropTypes.number,
+  bg: PropTypes.string,
+  disabled: PropTypes.bool,
+  className: PropTypes.any
 }
 
 IconButton.defaultProps = {
-  active: false,
-  notification: false,
-  onClick: ()=>{},
   size: 50,
-  icon: <img src={Logo} width={30} height={50} alt="Twitter Logo" />
+  ml: 0,
+  mr: 0,
+  bg: "white",
+  disabled: false,
+  className: null
 }
 
 export default IconButton;

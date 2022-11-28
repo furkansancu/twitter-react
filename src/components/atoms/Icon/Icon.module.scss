@@ -1,0 +1,6 @@
+@import '../../../globals';
+
+.Icon {
+    &__White path {fill: $whiteish-gray !important;}
+    &__Blue path {fill: $bird-blue !important;}
+}

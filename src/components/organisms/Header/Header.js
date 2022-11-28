@@ -13,7 +13,7 @@ export default function Header(props) {
           <NavLink to="/home" icon="Logo" mt={2} size={30} blue_background={true} />
           <nav role="navigation">
             <NavLink to="/home" icon="Home" text="Home" notification={true} mt={5} />
-            <NavLink to="/explore" icon="Explore" text="Explore" notification={0}/>
+            <NavLink to="/explore" icon="Hashtag" text="Explore" notification={0}/>
             <NavLink to="/notification" icon="Notification" text="Notifications" notification={1}/>
             <NavLink to="/messages" icon="Message" text="Messages" notification={0}/>
             <NavLink to="/bookmarks" icon="Bookmark" text="Bookmarks" notification={0}/>
